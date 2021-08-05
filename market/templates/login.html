@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Login Page
+{% endblock %}
+
+
+{% block content %}
+
+<body class="text-center">
+    <div class="container">
+        <form method="POST" class="form-signin" style="color:white">
+            {{ form.hidden_tag() }}   <!-- This saves user from getting details stolen by hackers. CSRF Attack -->
+
+            <img class="mb-4" src="https://res.cloudinary.com/dzzjp6xlv/image/upload/c_scale,h_192,q_100/v1628174646/circle-cropped_waeasj.png" alt="">
+            <h1 class="h3 mb-3 font-weight-normal">
+                Please Login
+            </h1>
+            <br>
+
+
+            {{ form.username.label() }}
+            {{ form.username(class="form-control", placeholder="User Name")}}
+
+            {{ form.password.label() }}
+            {{ form.password(class='form-control', placeholder='Password') }}
+            <br>
+
+            {{ form.submit(class="btn btn-md btn-primary") }}
+
+            <br>
+            <div class="checkbox mb-3">
+                <br>
+               <a href="{{ url_for('register_page') }}">Create new account?</a>
+
+               
+
+        </form>
+    </div>
+</body>
+
+{% endblock %}
+
+

@@ -1,0 +1,58 @@
+to create a database
+
+terminal > type "python" > Enter
+
+type => from "your python file" import db
+
+then => db.create_all() => in the explorer of VS Code a file named "your python file.db" would be created
+
+type in terminal > from "your python file" import Item
+
+for example - type => item1 = Item(name="Iphone 10", price=500, barcode="893212299897", description='desc')
+
+to save db => db.session.add(item1)
+db.session.commit()
+
+to acess the saved db => Item.query.all()
+
+
+follow the same as above 
+
+----------------------------------------------------------------------------------------
+
+dunder db
+
+Dunder methods
+Dunder methods are names that are preceded and succeeded by double underscores, hence the name dunder. They are also called magic methods and can help override functionality for built-in functions for custom classes
+
+
+terminal > python > from "your python file" import db 
+from "your python file" import Item
+
+Item.query.all()
+
+iterating => 
+for item in Item.query.all():
+    item.name
+    item.price
+    item.description
+    item.barcode
+
+click enter to show 
+---------------------------------------------------
+
+To filter objects 
+Item.query.filter_by(price=500)
+O/P =>    <flask_sqlalchemy.BaseQuery object at 0x000002186A9CDBE0>
+the key value is cz there exists multiple items
+
+to get specific item than key value as shown above, you should iterate .. type:
+for item in Item.query.filter_by(price=500):
+    item.name
+
+shows the item    
+
+
+
+
+

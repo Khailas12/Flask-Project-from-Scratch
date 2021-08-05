@@ -1,0 +1,3 @@
+
+Dunder methods
+Dunder methods are names that are preceded and succeeded by double underscores, hence the name dunder. They are also called magic methods and can help override functionality for built-in functions for custom classes
